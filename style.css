@@ -77,3 +77,11 @@ td[type="number"]
 td[type="number"]:hover{
     background-color: #D5DBDD;
 }
+#display{
+    display: flex;
+    background-color: transparent;
+    border: transparent;
+    font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 25px;
+
+}
