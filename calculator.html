@@ -8,28 +8,28 @@
 <body>
 <table cellspacing="0" cellpadding="0">
     <tr>
-        <td colspan="3" type="text" ><input id="display"> </input> </td>
-        <td type="button" id="cButton"><input type="image" src="VectorC.svg" class="buttonRight" ></td>
+        <td colspan="3" type="text" ><input type="text" id="display" placeholder="0" disabled></input></td>
+        <td type="button" id="cButton"><input type="image" src="VectorC.svg" class="buttonRight"  ></td>
     </tr>
     <tr>
-        <td type="number"><button class="numButton">7</button></td>
-        <td type="number"><button class="numButton">8</button></td>
-        <td type="number"><button class="numButton">9</button> </td>
+        <td type="number"><button class="numButton" onclick="numButton(7)" >7</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(8)">8</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(9)">9</button> </td>
         <td type="button"><input type="image" src="Vectordiv.svg" class="buttonRight"></td>
     </tr>
     <tr>
-        <td type="number"><button class="numButton">4</button></td>
-        <td type="number"><button class="numButton">5</button></td>
-        <td type="number"><button class="numButton">6</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(4)">4</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(5)">5</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(6)">6</button></td>
         <td type="button"><input type="image" src="Vectormult.svg" class="buttonRight"></td>    </tr>
     <tr>
-        <td type="number"><button class="numButton">1</button></td>
-        <td type="number"><button class="numButton">2</button></td>
-        <td type="number"><button class="numButton">3</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(1)">1</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(2)">2</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(3)">3</button></td>
         <td type="button"> <input type="image" src="Vectorsubs.svg" class="buttonRight"></td>    </tr>
     <tr>
-        <td type="number"><button class="numButton" id="comma">,</button></td>
-        <td type="number"><button class="numButton">0</button></td>
+        <td type="number"><button class="numButton" id="comma" onclick="comaButton()">,</button></td>
+        <td type="number"><button class="numButton" onclick="numButton(0)">0</button></td>
         <td type="buttonEqual"><input type="image" src="Vectorequal.svg" id="equal"></td>
         <td type="button"><input type="image" src="Vectorsum.svg" class="buttonRight"></td>    </tr>
 </table>
