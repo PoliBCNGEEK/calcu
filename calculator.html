@@ -9,7 +9,7 @@
 <table cellspacing="0" cellpadding="0">
     <tr>
         <td colspan="3" type="text" ><input type="text" id="display" placeholder="0" disabled></input></td>
-        <td type="button" id="cButton"><input type="image" src="VectorC.svg" class="buttonRight"  ></td>
+        <td type="button" id="cButton"><input type="image" src="VectorC.svg" class="buttonRight" onclick="cButton()" ></td>
     </tr>
     <tr>
         <td type="number"><button class="numButton" onclick="numButton(7)" >7</button></td>
@@ -26,12 +26,12 @@
         <td type="number"><button class="numButton" onclick="numButton(1)">1</button></td>
         <td type="number"><button class="numButton" onclick="numButton(2)">2</button></td>
         <td type="number"><button class="numButton" onclick="numButton(3)">3</button></td>
-        <td type="button"> <input type="image" src="Vectorsubs.svg" class="buttonRight"></td>    </tr>
+        <td type="button"> <input type="image" src="Vectorsubs.svg" class="buttonRight" ></td>    </tr>
     <tr>
         <td type="number"><button class="numButton" id="comma" onclick="comaButton()">,</button></td>
         <td type="number"><button class="numButton" onclick="numButton(0)">0</button></td>
-        <td type="buttonEqual"><input type="image" src="Vectorequal.svg" id="equal"></td>
-        <td type="button"><input type="image" src="Vectorsum.svg" class="buttonRight"></td>    </tr>
+        <td type="buttonEqual"><input type="image" src="Vectorequal.svg" id="equal" onclick="equalButton()"></td>
+        <td type="button"><input type="image" src="Vectorsum.svg" class="buttonRight" onclick="sumarButton()"></td>    </tr>
 </table>
 <script src="scripts/main.js"></script>
 

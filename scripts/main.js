@@ -3,14 +3,19 @@ let segundoNum = 0;
 let estado = "false";
 let operador = "";
 
+
 function numButton(x){
     if(estado === "false"){
         
         document.getElementById('display').value += x;
         primerNum = document.getElementById('display').value;
+        console.log(primerNum);
+        console.log("siii");
     }else{
         document.getElementById('display').value += x;
         segundoNum = document.getElementById('display').value;
+        console.log(segundoNum);
+        console.log("noooooooooo")
     }
 }
 
@@ -24,11 +29,30 @@ function comaButton(){
     }
 } 
  function sumarButton(){
+    document.getElementById("display").value = 0;
     if(estado === "false" ){
        operador = "+";
        estado = "true";
-       document.getElementById("display").value = 0;
     }else{
         operador = "+";
+    }
+ }
+
+ function cButton(){
+    document.getElementById("display").value = 0;
+    primerNum = 0;
+    segundoNum = 0;
+    estado = "false";
+ }
+
+ function equalButton(){
+    let resultado = 0;
+
+    resultado = Number(primerNum) + Number(segundoNum);
+    console.log(resultado);
+
+    if(operador === "+"){
+    
+        document.getElementById("display").value = resultado; 
     }
  }
