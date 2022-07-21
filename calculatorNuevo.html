@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+<table cellspacing="0" cellpadding="0">
+    <tr>
+        <td colspan="3" type="text" ><input type="text" id="display" placeholder="0" disabled></input></td>
+        <td type="button" id="cButton"><input type="image" src="VectorC.svg" class="buttonRight" onclick="cButton()" ></td>
+    </tr>
+    <tr>
+        <td type="number"><button data-number class="numButton"  >7</button></td>
+        <td type="number"><button data-number class="numButton" >8</button></td>
+        <td type="number"><button data-number class="numButton" >9</button> </td>
+        <td type="button"><input data-operation type="image" src="Vectordiv.svg" class="buttonRight"></td>
+    </tr>
+    <tr>
+        <td type="number"><button data-number class="numButton" >4</button></td>
+        <td type="number"><button data-number class="numButton" >5</button></td>
+        <td type="number"><button data-number class="numButton" >6</button></td>
+        <td type="button"><input data-operation type="image" src="Vectormult.svg" class="buttonRight"></td>    </tr>
+    <tr>
+        <td type="number"><button data-number class="numButton" >1</button></td>
+        <td type="number"><button data-number class="numButton" >2</button></td>
+        <td type="number"><button data-number class="numButton" >3</button></td>
+        <td type="button"> <input data-operation type="image" src="Vectorsubs.svg" class="buttonRight" ></td>    </tr>
+    <tr>
+        <td type="number"><button data-number class="numButton" id="comma" onclick="comaButton()">,</button></td>
+        <td type="number"><button data-number class="numButton" >0</button></td>
+        <td type="buttonEqual"><input data-equals type="image" src="Vectorequal.svg" id="equal" onclick="equalButton()"></td>
+        <td type="button"><input data-operation type="image" src="Vectorsum.svg" class="buttonRight" onclick="sumarButton()"></td>    </tr>
+</table>
+<script src="scripts/nuevo.js"></script>
+
+</body>
+</html>
