@@ -10,8 +10,14 @@ td {
     height: 10vmin;
 }
 .buttonRight{
+    font-size: 50px;
+    font-weight: bold;
+    background-color: transparent;
+    border: transparent;
+}
+#cButton{
     height: 35px;
-    width: 30px;
+    width: 50px;
 }
 .numButton{
     color: black;
@@ -21,6 +27,21 @@ td {
     font-weight: bold;
     background-color: transparent;
 
+}
+td[type="topButton"]
+{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    background-color: #80E3D1;
+    border-bottom: solid black 5px;
+
+}
+.buttonText{
+    font-size: 35px;
+    font-weight: bold;
+    background-color: transparent;
+    border: transparent;
 }
 td[type="button"]
 {
@@ -47,9 +68,7 @@ td[type="buttonEqual"]
     height: 25px;
     width: 25px;
 }
-#cButton{
-    border-bottom: solid black 5px;
-}
+
 
 td:hover{
     background-color: #75BCD5;
@@ -77,12 +96,29 @@ td[type="number"]
 td[type="number"]:hover{
     background-color: #D5DBDD;
 }
-#display{
+.displayCurrent{
     background-color: transparent;
     border: transparent;
     font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 40pt;
     text-align: right;
+<<<<<<< HEAD
     padding-left: -15px;
     width: 270px;
 }
+=======
+    width: 300px;
+}
+.displayPrevious{
+    background-color: transparent;
+    border: transparent;
+    font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 25pt;
+    text-align: right;
+    padding-left: -15px;
+    margin-right: -15px;
+    width: 300px;
+
+}
+
+>>>>>>> 7a0caae4ae49889076d474509d3fea59bc96cbc8

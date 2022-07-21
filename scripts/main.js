@@ -39,7 +39,6 @@ function comaButton(){
  }
 
  function cButton(){
-    document.getElementById("display").value = 0;
     primerNum = 0;
     segundoNum = 0;
     estado = "false";
@@ -55,4 +54,8 @@ function comaButton(){
     
         document.getElementById("display").value = resultado; 
     }
+ }
+
+ function highlightButton(){
+    document.getElementsByClassName("buttonRight").className = "buttonRightHighlight";
  }
