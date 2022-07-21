@@ -6,7 +6,7 @@ class Calculator {
 
     }
     clear(){
-      this.currentOperand = ''
+      this.currentOperand = '0'
       this.previousOperand  = ''
       this.operation = undefined
     }
@@ -17,10 +17,12 @@ class Calculator {
     delete(){
       this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
+    /*
+    includes() da true o false si el texto que le das incluye lo que le especifiques.
+    */
     appendNumber(number){
       if(number === ',' && this.currentOperand.includes(',')) return
         this.currentOperand = this.currentOperand.toString() + number.toString()
-
     }
     chooseOperation(operation){
       if(this.currentOperand === '' ) return
@@ -28,9 +30,14 @@ class Calculator {
         this.compute()
       }
       this.operation = operation
-      this.previousOperand = this.currentOperand
+      let num = this.currentOperand.toString()
+    
+      if(num.charAt(0) === '0' && num.length > 1){
+        this.previousOperand = this.currentOperand.substring(1)
+      } else{
+        this.previousOperand = this.currentOperand
+      }
       this.currentOperand = ''
-
     }
     /*
     parseFloat:
@@ -53,10 +60,10 @@ class Calculator {
         case '-':
           computation = prev - current
           break
-        case '*':
+        case 'X':
           computation = prev * current
           break
-        case '÷':
+        case '/':
           computation = prev / current
           break
         default:
@@ -67,8 +74,23 @@ class Calculator {
       this.previousOperand = ''
     }
     updateDisplay(){
-        this.currentOperandTextElement.innerText = this.currentOperand
+        let num = this.currentOperand.toString()
+        if(num.charAt(0) === '0' && num < 1){
+          this.currentOperandTextElement.innerText = this.currentOperand
+        }else  if(num.charAt(0) === '0'){
+          this.currentOperandTextElement.innerText = this.currentOperand.substring(1)
+        } else {
+          this.currentOperandTextElement.innerText = this.currentOperand
+        }
+
         this.previousOperandTextElement.innerText = this.previousOperand
+
+    }
+    unHighlight(){
+      setHighlightButton("+", false);
+      setHighlightButton("-",false);
+      setHighlightButton("X", false);
+      setHighlightButton("/",false);
 
     }
 }
@@ -93,17 +115,35 @@ numberButtons.forEach(button => {
 
 operationButtons.forEach(button => {
   button.addEventListener('click', () =>{
+    button.className = "buttonRightGHighlight"
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
 })
 
 equalButton.addEventListener('click', button => {
+  calculator.unHighlight()  
   calculator.compute()
   calculator.updateDisplay()
 })
+
 acButton.addEventListener('click', button => {
+  calculator.unHighlight()
   calculator.clear()
   calculator.updateDisplay()
 })
-function
+
+deleteButton.addEventListener('click', button => {
+  calculator.delete()
+  calculator.updateDisplay()
+})
+
+function setHighlightButton(buttonId, value) {
+  const button = document.getElementById(buttonId);
+  if (value) {
+    button.className = "buttonRightGHighlight";
+  }
+  else {
+    button.className = "buttonRight";
+  }
+}

@@ -11,7 +11,7 @@
     <tr>
         <td colspan="4" type="text" style="height: 150px;">
             <div data-previous-operand class="displayPrevious"></div>
-            <div data-current-operand class="displayCurrent"></div>
+            <div data-current-operand class="displayCurrent">0</div>
         </td>
     </tr>
     <tr>
@@ -22,26 +22,26 @@
     </tr>
 
     <tr>
-        <td type="number"><button data-number class="numButton" >7</button></td>
-        <td type="number"><button data-number class="numButton" >8</button></td>
-        <td type="number"><button data-number class="numButton" >9</button> </td>
-        <td type="button"><button data-operation  class="buttonRight">/</button></td></td>
+        <td type="number"><button data-number class="numButton">7</button></td>
+        <td type="number"><button data-number class="numButton">8</button></td>
+        <td type="number"><button data-number class="numButton">9</button> </td>
+        <td type="button"><button data-operation  class="buttonRight" id="/">/</button></td></td>
     </tr>
     <tr>
-        <td type="number"><button data-number class="numButton" >4</button></td>
-        <td type="number"><button data-number class="numButton" >5</button></td>
-        <td type="number"><button data-number class="numButton" >6</button></td>
-        <td type="button"><button data-operation  class="buttonRight">*</button></td>    </tr>
+        <td type="number"><button data-number class="numButton">4</button></td>
+        <td type="number"><button data-number class="numButton">5</button></td>
+        <td type="number"><button data-number class="numButton">6</button></td>
+        <td type="button"><button data-operation  class="buttonRight" id="X">X</button></td>    </tr>
     <tr>
-        <td type="number"><button data-number class="numButton" >1</button></td>
-        <td type="number"><button data-number class="numButton" >2</button></td>
-        <td type="number"><button data-number class="numButton" >3</button></td>
-        <td type="button"><button data-operation  class="buttonRight">-</button></td>    </tr>
+        <td type="number"><button data-number class="numButton">1</button></td>
+        <td type="number"><button data-number class="numButton">2</button></td>
+        <td type="number"><button data-number class="numButton">3</button></td>
+        <td type="button"><button data-operation  class="buttonRight" id="-">-</button></td>    </tr>
     <tr>
-        <td type="number"><button data-number class="numButton" id="comma" >,</button></td>
-        <td type="number"><button data-number class="numButton" >0</button></td>
-        <td type="buttonEqual"><button data-operation class="buttonRight">=</button></td>
-        <td type="button"><button data-operation  class="buttonRight">+</button></td>
+        <td type="number"><button data-number class="numButton" id="comma">,</button></td>
+        <td type="number"><button data-number class="numButton">0</button></td>
+        <td type="buttonEqual"><button data-equals class="buttonRight">=</button></td>
+        <td type="button"><button data-operation  class="buttonRight" id="+">+</button></td>
     </tr>
 </table>
 <script src="scripts/nuevo.js"></script>

@@ -15,6 +15,13 @@ td {
     background-color: transparent;
     border: transparent;
 }
+.buttonRightGHighlight{
+    font-size: 50px;
+    font-weight: bold;
+    background-color: transparent;
+    border: transparent;
+    color: white;
+}
 #cButton{
     height: 35px;
     width: 50px;
