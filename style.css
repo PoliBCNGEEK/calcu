@@ -102,11 +102,6 @@ td[type="number"]:hover{
     font-family: "Myriad Pro", Myriad, "Liberation Sans", "Nimbus Sans L", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 40pt;
     text-align: right;
-<<<<<<< HEAD
-    padding-left: -15px;
-    width: 270px;
-}
-=======
     width: 300px;
 }
 .displayPrevious{
@@ -121,4 +116,3 @@ td[type="number"]:hover{
 
 }
 
->>>>>>> 7a0caae4ae49889076d474509d3fea59bc96cbc8
