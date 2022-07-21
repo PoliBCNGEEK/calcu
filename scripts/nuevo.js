@@ -79,10 +79,11 @@ class Calculator {
           this.currentOperandTextElement.innerText = this.currentOperand
         }else  if(num.charAt(0) === '0'){
           this.currentOperandTextElement.innerText = this.currentOperand.substring(1)
+        }else  if(num === 'Infinity'){
+          this.currentOperandTextElement.innerText = "ERROR"
         } else {
           this.currentOperandTextElement.innerText = this.currentOperand
         }
-
         this.previousOperandTextElement.innerText = this.previousOperand
 
     }
@@ -93,6 +94,17 @@ class Calculator {
       setHighlightButton("/",false);
 
     }
+    convert(){
+      let num = this.currentOperand
+        this.currentOperand -= this.currentOperand*2
+    }
+    cheker(){
+      if(this.currentOperand===''){
+        this.currentOperandTextElement.innerText = 'ERROR'
+        this.previousOperandTextElement.innerText = '' 
+      }
+    }
+
 }
 
 const numberButtons = document.querySelectorAll('[data-number]')
@@ -120,11 +132,15 @@ operationButtons.forEach(button => {
     calculator.updateDisplay()
   })
 })
-
+convertButton.addEventListener('click', button=> {
+  calculator.convert()
+  calculator.updateDisplay()
+})
 equalButton.addEventListener('click', button => {
   calculator.unHighlight()  
   calculator.compute()
   calculator.updateDisplay()
+  calculator.cheker()
 })
 
 acButton.addEventListener('click', button => {
