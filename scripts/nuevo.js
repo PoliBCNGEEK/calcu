@@ -21,8 +21,9 @@ class Calculator {
     includes() da true o false si el texto que le das incluye lo que le especifiques.
     */
     appendNumber(number){
+  
       if(number === ',' && this.currentOperand.includes(',')) return
-        this.currentOperand = this.currentOperand.toString() + number.toString()
+        this.currentOperand = this.currentOperand.toString() + number.toString()  
     }
     chooseOperation(operation){
       if(this.currentOperand === '' ) return
@@ -75,10 +76,12 @@ class Calculator {
     }
     updateDisplay(){
         let num = this.currentOperand.toString()
+        if(num === '0,') {
+          this.currentOperandTextElement.innerText = this.currentOperand
+          return
+        }
         if(num.charAt(0) === '0' && num < 1){
           this.currentOperandTextElement.innerText = this.currentOperand
-        }else  if(num.charAt(0) === '0'){
-          this.currentOperandTextElement.innerText = this.currentOperand.substring(1)
         }else  if(num === 'Infinity'){
           this.currentOperandTextElement.innerText = "ERROR"
         } else {
@@ -163,3 +166,57 @@ function setHighlightButton(buttonId, value) {
     button.className = "buttonRight";
   }
 }
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode == 49 ||event.keyCode == 97 ) {
+      calculator.appendNumber(1)
+      calculator.updateDisplay()
+  }else if (event.keyCode == 50 ||event.keyCode == 98) {
+    calculator.appendNumber(2)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 51 ||event.keyCode == 99) {
+    calculator.appendNumber(3)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 52 ||event.keyCode == 100) {
+    calculator.appendNumber(4)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 53 ||event.keyCode == 101) {
+    calculator.appendNumber(5)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 54 ||event.keyCode == 102) {
+    calculator.appendNumber(6)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 55 ||event.keyCode == 103) {
+    calculator.appendNumber(7)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 56 ||event.keyCode == 104) {
+    calculator.appendNumber(8)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 57 ||event.keyCode == 105) {
+    calculator.appendNumber(9)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 48 ||event.keyCode == 96) {
+    calculator.appendNumber(0)
+    calculator.updateDisplay()
+  }else if (event.keyCode == 13 ||event.keyCode == 13) {
+    calculator.unHighlight()  
+    calculator.compute()
+    calculator.updateDisplay()
+    calculator.cheker()
+  }else if (event.keyCode == 188 ||event.keyCode == 110) {
+    calculator.appendNumber(",")
+    calculator.updateDisplay()
+  }else if (event.keyCode == 187 || event.keyCode == 107) {
+    calculator.chooseOperation("+")
+    calculator.updateDisplay()
+  }else if (event.keyCode == 189 ||event.keyCode == 109) {
+    calculator.chooseOperation("-")
+    calculator.updateDisplay()
+  }else if ((event.keyCode == 187 && event.keyCode === 16)||event.keyCode == 106) {
+    calculator.chooseOperation("X")
+    calculator.updateDisplay()
+  }else if (event.keyCode == 48 ||event.keyCode == 96) {
+    calculator.appendNumber(0)
+    calculator.updateDisplay()
+  }
+}, true);

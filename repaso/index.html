@@ -7,8 +7,20 @@
         </script>
     </head>
     <body>
-        <h1>Siiiii
-        </h1>
-        <p>jnoikfipjsefijhs</p>
+        <div texto style="align-items:center" >hola</div>
+
+        <script >
+            const text = document.querySelector('[texto]')
+
+            document.addEventListener('keydown', function(event) {
+                if(event.keyCode == 55) {
+                    alert('Left was pressed');
+                }
+                else if(event.keyCode == 39) {
+                    alert('Right was pressed');
+                }
+            });
+        </script>
+
     </body>
 </html>
