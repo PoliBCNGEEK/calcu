@@ -21,7 +21,12 @@ class Calculator {
     includes() da true o false si el texto que le das incluye lo que le especifiques.
     */
     appendNumber(number){
-  
+      console.log(this.currentOperand)
+      if(this.currentOperand.length === 10 && this.currentOperand.includes(',')){
+        
+      } else if(this.currentOperand.length >= 10){
+        return
+      }
       if(number === ',' && this.currentOperand.includes(',')) return
         this.currentOperand = this.currentOperand.toString() + number.toString()  
     }
@@ -73,11 +78,16 @@ class Calculator {
       this.currentOperand = computation
       this.operation = undefined
       this.previousOperand = ''
+      console.log(this.currentOperand)
     }
     updateDisplay(){
         let num = this.currentOperand.toString()
         if(num === '0,') {
           this.currentOperandTextElement.innerText = this.currentOperand
+          return
+        }
+        if(num.length > 10){
+          this.currentOperandTextElement.innerText = "ERROR"
           return
         }
         if(num.charAt(0) === '0' && num < 1){
@@ -99,7 +109,7 @@ class Calculator {
     }
     convert(){
       let num = this.currentOperand
-        this.currentOperand -= this.currentOperand*2
+        this.currentOperand = -(this.currentOperand)
     }
     cheker(){
       if(this.currentOperand===''){
@@ -198,7 +208,7 @@ document.addEventListener('keydown', function(event) {
   }else if (event.keyCode == 48 ||event.keyCode == 96) {
     calculator.appendNumber(0)
     calculator.updateDisplay()
-  }else if (event.keyCode == 13 ||event.keyCode == 13) {
+  }else if (event.keyCode == 13) {
     calculator.unHighlight()  
     calculator.compute()
     calculator.updateDisplay()
@@ -212,11 +222,18 @@ document.addEventListener('keydown', function(event) {
   }else if (event.keyCode == 189 ||event.keyCode == 109) {
     calculator.chooseOperation("-")
     calculator.updateDisplay()
-  }else if ((event.keyCode == 187 && event.keyCode === 16)||event.keyCode == 106) {
+  }else if (event.keyCode == 106) {
     calculator.chooseOperation("X")
     calculator.updateDisplay()
-  }else if (event.keyCode == 48 ||event.keyCode == 96) {
-    calculator.appendNumber(0)
+  }else if (event.keyCode == 111) {
+    calculator.chooseOperation("/")
+    calculator.updateDisplay()
+  }else if (event.keyCode == 8 ) {
+    calculator.delete()
+    calculator.updateDisplay()
+  }else if (event.keyCode == 27 ) {
+    calculator.unHighlight()
+    calculator.clear()
     calculator.updateDisplay()
   }
 }, true);
