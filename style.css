@@ -122,4 +122,9 @@ td[type="number"]:hover{
     width: 300px;
 
 }
+.buttonDisabled{     
+    cursor: not-allowed;   
+    pointer-events: none;    
+    color: red !important; 
+}
 

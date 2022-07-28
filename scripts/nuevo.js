@@ -101,11 +101,13 @@ class Calculator {
         }
         if(num.length > 10){
           this.currentOperandTextElement.innerText = "ERROR"
+          disableNumericButton()
           return
         }
         if(num.charAt(0) === '0' && num < 1){
           this.currentOperandTextElement.innerText = this.currentOperand
         }else  if(num === 'Infinity'){
+          disableNumericButton()
           this.currentOperandTextElement.innerText = "ERROR"
         } else {
           this.currentOperandTextElement.innerText = this.currentOperand
@@ -180,6 +182,17 @@ deleteButton.addEventListener('click', button => {
   calculator.updateDisplay()
 })
 
+function disableNumericButton() {
+  if(numberButtons.disabled === true){
+    console.log("seeee")
+    numberButtons.forEach (numberButton => numberButton.disabled = true)
+    numberButtons.forEach (numberButton => numberButton.classList.remove('buttonDisabled'))
+  }
+  numberButtons.forEach (numberButton => numberButton.disabled = true)
+  numberButtons.forEach (numberButton => numberButton.classList.add('buttonDisabled'))
+}
+
+
 function setHighlightButton(buttonId, value) {
   const button = document.getElementById(buttonId);
   if (value) {
@@ -192,6 +205,7 @@ function setHighlightButton(buttonId, value) {
 
 document.addEventListener('keydown', function(event) {
   if (event.keyCode == 49 ||event.keyCode == 97 ) {
+    disableNumericButton()
       calculator.appendNumber(1)
       calculator.updateDisplay()
   }else if (event.keyCode == 50 ||event.keyCode == 98) {
