@@ -21,20 +21,34 @@ class Calculator {
     includes() da true o false si el texto que le das incluye lo que le especifiques.
     */
     appendNumber(number){
-      console.log(this.currentOperand)
+      
+      if(number === ','){
+        document.addEventListener("DOMContentLoaded", function(event) {
+          document.getElementById("coma").disabled = true;
+        })
+      }
+      if(this.currentOperand.toString() === "0"){
+        this.currentOperand = number
+        return
+      }
       if(this.currentOperand.length === 10 && this.currentOperand.includes(',')){
         
       } else if(this.currentOperand.length >= 10){
         return
       }
       if(number === ',' && this.currentOperand.includes(',')) return
-        this.currentOperand = this.currentOperand.toString() + number.toString()  
+        this.currentOperand = this.currentOperand.toString() + number.toString()
     }
+
     chooseOperation(operation){
-      if(this.currentOperand === '' ) return
+      if(this.currentOperand === '' ) {
+        this.operation = operation
+        return
+      }
       if(this.previousOperand !== ''){
         this.compute()
       }
+      
       this.operation = operation
       let num = this.currentOperand.toString()
     
@@ -78,7 +92,6 @@ class Calculator {
       this.currentOperand = computation
       this.operation = undefined
       this.previousOperand = ''
-      console.log(this.currentOperand)
     }
     updateDisplay(){
         let num = this.currentOperand.toString()
