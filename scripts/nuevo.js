@@ -207,7 +207,7 @@ function setHighlightButton(buttonId, value) {
 document.addEventListener('keydown', logKey);
 
 function logKey(e) {
-  if( <e.ctrlKey}){
+  if( {e,ctrlKey}){
     calculator.convert()
     calculator.updateDisplay()
   }
