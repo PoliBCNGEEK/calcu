@@ -21,11 +21,13 @@ class Calculator {
     includes() da true o false si el texto que le das incluye lo que le especifiques.
     */
     appendNumber(number){
-      
       if(number === ','){
         document.addEventListener("DOMContentLoaded", function(event) {
           document.getElementById("coma").disabled = true;
         })
+      }
+      if (this.currentOperand.toString() === "0" && number === ','){
+        this.currentOperand = "0,"
       }
       if(this.currentOperand.toString() === "0"){
         this.currentOperand = number
@@ -95,6 +97,7 @@ class Calculator {
     }
     updateDisplay(){
         let num = this.currentOperand.toString()
+        console.log(num)
         if(num === '0,') {
           this.currentOperandTextElement.innerText = this.currentOperand
           return
@@ -201,6 +204,14 @@ function setHighlightButton(buttonId, value) {
     button.className = "buttonRight";
   }
 }
+document.addEventListener('keydown', logKey);
+
+function logKey(e) {
+  if( <e.ctrlKey}){
+    calculator.convert()
+    calculator.updateDisplay()
+  }
+}
 
 document.addEventListener('keydown', function(event) {
   if (event.keyCode == 49 ||event.keyCode == 97 ) {
@@ -261,4 +272,5 @@ document.addEventListener('keydown', function(event) {
     calculator.clear()
     calculator.updateDisplay()
   }
+
 }, true);

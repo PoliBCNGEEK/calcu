@@ -11,37 +11,37 @@
     <tr>
         <td colspan="4" type="text" style="height: 100px;">
             <div data-previous-operand class="displayPrevious" hidden="hidden" ></div>
-            <div data-current-operand class="displayCurrent">0</div>
+            <div data-current-operand class="displayCurrent" data-testid="display" >0</div>
         </td>
     </tr>
     <tr>
         <td colspan="2" type="topButton"><input data-delete type="button" class="buttonText" value="CE"></td>
-        <td type="topButton" ><input data-convert type="button" class="buttonText" value="+/-"></td>
-        <td type="topButton" style="border-left: solid black 5px;" ><input data-all-clear id="cButton" type="image" src="VectorC.svg"  ></td>
+        <td type="topButton" ><input data-convert type="button" class="buttonText" value="+/-" data-testid="+-"></td>
+        <td type="topButton" style="border-left: solid black 5px;" ><input data-all-clear id="cButton" type="image" src="VectorC.svg" data-testid="C"></td>
 
     </tr>
 
     <tr>
-        <td type="number"><button data-number class="numButton">7</button></td>
-        <td type="number"><button data-number class="numButton">8</button></td>
-        <td type="number"><button data-number class="numButton">9</button> </td>
-        <td type="button"><button data-operation  class="buttonRight" id="/">/</button></td></td>
+        <td type="number"><button data-number class="numButton" data-testid="7">7</button></td>
+        <td type="number"><button data-number class="numButton" data-testid="8">8</button></td>
+        <td type="number"><button data-number class="numButton" data-testid="9">9</button> </td>
+        <td type="button"><button data-operation  class="buttonRight" id="/" data-testid="/">/</button></td></td>
     </tr>
     <tr>
-        <td type="number"><button data-number class="numButton">4</button></td>
-        <td type="number"><button data-number class="numButton">5</button></td>
-        <td type="number"><button data-number class="numButton">6</button></td>
-        <td type="button"><button data-operation  class="buttonRight" id="X">X</button></td>    </tr>
+        <td type="number"><button data-number class="numButton" data-testid="4">4</button></td>
+        <td type="number"><button data-number class="numButton" data-testid="5">5</button></td>
+        <td type="number"><button data-number class="numButton" data-testid="6">6</button></td>
+        <td type="button"><button data-operation  class="buttonRight" id="X" data-testid="*">X</button></td>    </tr>
     <tr>
-        <td type="number"><button data-number class="numButton">1</button></td>
-        <td type="number"><button data-number class="numButton">2</button></td>
-        <td type="number"><button data-number class="numButton">3</button></td>
-        <td type="button"><button data-operation  class="buttonRight" id="-">-</button></td>    </tr>
+        <td type="number"><button data-number class="numButton" data-testid="1">1</button></td>
+        <td type="number"><button data-number class="numButton" data-testid="2">2</button></td>
+        <td type="number"><button data-number class="numButton" data-testid="3">3</button></td>
+        <td type="button"><button data-operation  class="buttonRight" id="-" data-testid="-">-</button></td>    </tr>
     <tr>
-        <td type="number"><button data-number class="numButton" id="comma">,</button></td>
-        <td type="number"><button data-number class="numButton">0</button></td>
-        <td type="buttonEqual"><button data-equals class="buttonRight">=</button></td>
-        <td type="button"><button data-operation  class="buttonRight" id="+">+</button></td>
+        <td type="number"><button data-number class="numButton" id="comma" data-testid=",">,</button></td>
+        <td type="number"><button data-number class="numButton" data-testid="0">0</button></td>
+        <td type="buttonEqual"><button data-equals class="buttonRight" data-testid="=">=</button></td>
+        <td type="button"><button data-operation  class="buttonRight" id="+" data-testid="+">+</button></td>
     </tr>
 </table>
 <script src="scripts/nuevo.js"></script>
