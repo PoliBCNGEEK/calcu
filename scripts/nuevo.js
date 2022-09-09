@@ -184,7 +184,6 @@ deleteButton.addEventListener('click', button => {
 
 function disableNumericButton() {
   if(numberButtons.disabled === true){
-    console.log("seeee")
     numberButtons.forEach (numberButton => numberButton.disabled = true)
     numberButtons.forEach (numberButton => numberButton.classList.remove('buttonDisabled'))
   }
@@ -205,7 +204,6 @@ function setHighlightButton(buttonId, value) {
 
 document.addEventListener('keydown', function(event) {
   if (event.keyCode == 49 ||event.keyCode == 97 ) {
-    disableNumericButton()
       calculator.appendNumber(1)
       calculator.updateDisplay()
   }else if (event.keyCode == 50 ||event.keyCode == 98) {
