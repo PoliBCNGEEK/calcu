@@ -137,6 +137,10 @@ class Calculator {
     }
 
 }
+window.onload = function(){ //Acciones tras cargar la página
+  window.addEventListener('keydown',teclado); // Función teclado
+}
+
 
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
@@ -204,13 +208,15 @@ function setHighlightButton(buttonId, value) {
     button.className = "buttonRight";
   }
 }
-document.addEventListener('keydown', logKey);
-
-function logKey(e) {
-  if( {e,ctrlKey}){
-    calculator.convert()
-    calculator.updateDisplay()
-  }
+function teclado (event) 
+{ 
+    event.preventDefault();
+    events = event || window.event;
+    k=events.key; 
+    if (k == 'Control') { 
+       calculator.convert()
+       calculator.updateDisplay()
+      }
 }
 
 document.addEventListener('keydown', function(event) {
